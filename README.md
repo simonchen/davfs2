@@ -1,10 +1,12 @@
-# dockcross-davfs2 (v1.7.0) ongoing cross-platform compliation
+# davfs2 (v1.7.0) ongoing cross-platform compliation
 Mount a WebDAV resource as a regular file system.
 the current source has pulled from http://download.savannah.nongnu.org/releases/davfs2/
 
-# dockcross - compile issue
-# mips-unknown-linux-gnu
+# dockcross - compile issues
+
+## mips-unknown-linux-gnu
 Linking libs: expat-2.5.0
+
 ## for mipsel-unknown-linux-gnu
 Linking libs: zlib-1.2.11, libxml2-2.9.11
 
