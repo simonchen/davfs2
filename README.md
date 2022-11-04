@@ -111,5 +111,5 @@ that's gcc / c runtime libs, suggest to copy all the static libs in /usr/local/l
 ## Now, let's force-linking libz.a(zlib) , libm.a, libc.a , libgcc.a, etc.
 when we've copied the gcc / c runtime static libs in /usr/local/lib, appending LDFLAGS="-L/usr/local/lib" that tells gcc to link libs in the directory as priority.
 ```
-./configure LDFLAGS="-L/usr/local/lib" LIBS="-lz -lm" --host=mipsel-unknown-linux-gnu
+./configure LDFLAGS="-L/usr/local/lib" LIBS="-lz -lm" --enable-static --host=mipsel-unknown-linux-gnu
 ```
