@@ -81,8 +81,8 @@ after changed the following lines to add "-L/usr/local -lz", the ./configure is 
 
 ## adding --static --enable-static --enable-static=yes --disable-shared for the compliation for all libs.
 
-## existing static lib paths
-suggest to copy all the static libs in /usr/local/lib/ , so gcc compiler will be able to link those as priority.
+## Toolchain - the existing static lib paths
+that's gcc / c runtime libs, suggest to copy all the static libs in /usr/local/lib/ , so gcc compiler will be able to link those as priority.
 
 ### gcc runtime
 ```
@@ -108,7 +108,8 @@ suggest to copy all the static libs in /usr/local/lib/ , so gcc compiler will be
 -r--r--r-- 1 root root    24278 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libBrokenLocale.a
 ```
 
-## force-linking with zlib , libm.so, but the version standard library is a problem.
+## Now, let's force-linking libz.a(zlib) , libm.a, libc.a , libgcc.a, etc.
+when we've copied the gcc / c runtime static libs in /usr/local/lib, appending LDFLAGS="-L/usr/local/lib" that tells gcc to link libs in the directory as priority.
 ```
 ./configure LDFLAGS="-L/usr/local/lib" LIBS="-lz -lm" --host=mipsel-unknown-linux-gnu
 ```
