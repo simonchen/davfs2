@@ -116,6 +116,11 @@ when we've copied the gcc / c runtime static libs in /usr/local/lib, appending L
 ./configure --libdir=/usr/local/lib -static --sharedlibdir=.
 ```
 
+### libxml2
+```
+./configure LDFLAGS="-L/usr/local/lib" LIBS="-lz -lm -lc" --libdir=/usr/local/lib --with-zlib --without-python --host=mipsel-unknown-linux-gnu
+```
+
 ### davfs2
 ```
 ./configure LDFLAGS="-L/usr/local/lib" LIBS="-lz -lm -lc" --enable-static=yes --host=mipsel-unknown-linux-gnu
