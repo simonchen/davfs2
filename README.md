@@ -7,7 +7,7 @@ the current source has pulled from http://download.savannah.nongnu.org/releases/
 ## mips-unknown-linux-gnu
 Linking libs: expat-2.5.0
 
-## for mipsel-unknown-linux-gnu
+## mipsel-unknown-linux-gnu
 Linking libs: zlib-1.2.11, libxml2-2.9.11
 
 Finally, when running ./configure , it raised errors as follows:
