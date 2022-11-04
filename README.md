@@ -81,7 +81,34 @@ after changed the following lines to add "-L/usr/local -lz", the ./configure is 
 
 ## adding --static --enable-static --enable-static=yes --disable-shared for the compliation for all libs.
 
-##force-linking with zlib , libm.so, but the version standard library is a problem.
+## existing static lib paths
+suggest to copy all the static libs in /usr/local/lib/ , so gcc compiler will be able to link those as priority.
+
+### gcc runtime
+```
+/usr/xcc/mipsel-unknown-linux-gnu/lib/gcc/mipsel-unknown-linux-gnu/8.5.0/libgcc.a
+```
+
+### c runtime
+```
+#ls -lt /usr/xcc/mipsel-unknown-linux-gnu/mipsel-unknown-linux-gnu/sysroot/usr/lib/lib*.a
+-r--r--r-- 1 root root    55768 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libutil.a
+-r--r--r-- 1 root root   406270 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/librpcsvc.a
+-r--r--r-- 1 root root   222936 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libanl.a
+-r--r--r-- 1 root root   217408 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libcrypt.a
+-r--r--r-- 1 root root   598156 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libresolv.a
+-r--r--r-- 1 root root  5091134 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libpthread.a
+-r--r--r-- 1 root root   723434 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/librt.a
+-r--r--r-- 1 root root 32290512 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libc.a
+-r--r--r-- 1 root root   115094 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libc_nonshared.a
+-r--r--r-- 1 root root     2730 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libg.a
+-r--r--r-- 1 root root     9168 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libmcheck.a
+-r--r--r-- 1 root root   305662 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libdl.a
+-r--r--r-- 1 root root  3930458 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libm.a
+-r--r--r-- 1 root root    24278 Nov  1 18:40 mipsel-unknown-linux-gnu/sysroot/usr/lib/libBrokenLocale.a
+```
+
+## force-linking with zlib , libm.so, but the version standard library is a problem.
 ```
 ./configure LDFLAGS="-L/usr/local/lib" LIBS="-lz -lm" --host=mipsel-unknown-linux-gnu
 ```
