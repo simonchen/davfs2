@@ -1,5 +1,5 @@
-# davfs2 (v1.7.0)
-Mount a WebDAV resource as a regular file system
+# dockcross-davfs2 (v1.7.0) ongoing cross-platform compliation
+Mount a WebDAV resource as a regular file system.
 the current source has pulled from http://download.savannah.nongnu.org/releases/davfs2/
 
 # dockcross - compile issue
@@ -55,11 +55,21 @@ configure:8014: incompatible neon library version 0.31.0: wanted 0.27 28 29 30 3
 configure:8026: error: could not find neon
 ```
 **solution**
-it's stuck on last error, exactly it's raised by previous warning at
+
+Since it was stuck on the last error, but exactly it was raised by previous warning at
 ```
 warning: libz.so.1, needed by /usr/local/lib/libxml2.so, not found (try using -rpath or -rpath-link)
 ```
 furthermore, the bash script failed to check next steps incorrectly:
 ```
 configure:8014: incompatible neon library version 0.31.0: wanted 0.27 28 29 30 31 32
+```
+obviously, it's missing the libz.so.1 to link, the reason is that 'libz' path has not been added via the bash commmand:
+```
+/usr/local/bin/neon-config --libs
+```
+after changed the following lines to add "-L/usr/local -lz", the ./configure is bypassed!
+```
+    --libs)
+        LIBS="-lneon  -L/usr/local/lib -lxml2 -L/usr/local/lib -lz"
 ```
