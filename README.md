@@ -79,7 +79,7 @@ after changed the following lines to add "-L/usr/local -lz", the ./configure is 
 
 # ./configure
 
-## adding --static --enable-static --enable-static=yes --disable-shared for the complation for all libs.
+## adding --static --enable-static --enable-static=yes --disable-shared for the compliation for all libs.
 
 ##force-linking with zlib , libm.so, but the version standard library is a problem.
 ```
