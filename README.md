@@ -75,3 +75,13 @@ after changed the following lines to add "-L/usr/local -lz", the ./configure is 
     --libs)
         LIBS="-lneon  -L/usr/local/lib -lxml2 -L/usr/local/lib -lz"
 ```
+
+
+# ./configure
+
+## adding --static --enable-static --enable-static=yes --disable-shared for the complation for all libs.
+
+##force-linking with zlib , libm.so, but the version standard library is a problem.
+```
+./configure LDFLAGS="-L/usr/local/lib" LIBS="-lz -lm" --host=mipsel-unknown-linux-gnu
+```
