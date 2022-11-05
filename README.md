@@ -120,7 +120,7 @@ when we've copied the gcc / c runtime static libs in /usr/local/lib, appending L
 
 ### libxml2
 ```
-./configure CC="/usr/local/musl/bin/musl-gcc" --includedir="/usr/local/musl/include" --libdir="/usr/local/musl/lib" --with-zlib --without-python --host=mipsel-unknown-linux-gnu
+./configure CC="/usr/local/musl/bin/musl-gcc" --includedir="/usr/local/musl/include /usr/local/include" --libdir="/usr/local/musl/lib" --with-zlib --without-python --host=mipsel-unknown-linux-gnu
 ```
 
 ### davfs2
