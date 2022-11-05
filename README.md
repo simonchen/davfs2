@@ -115,7 +115,7 @@ when we've copied the gcc / c runtime static libs in /usr/local/lib, appending L
 
 ### zlib
 ```
-./configure --libdir=/usr/local/lib -static --sharedlibdir=.
+./configure --includedir="/usr/local/musl/include" --libdir="/usr/local/musl/lib" --static --sharedlibdir=.
 ```
 
 ### libxml2
