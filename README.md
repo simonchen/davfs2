@@ -132,5 +132,7 @@ export CPPFLAGS=-I/usr/local/musl/include
 
 ### davfs2
 ```
+ln -s /usr/local/musl/bin/neon-config /usr/local/bin/neon-config
+./configure --prefix=/usr/local/musl --enable-static --host=mipsel-unknown-linux-gnu
 ./configure LDFLAGS="-L/usr/local/lib" LIBS="-lz -lm -lc" --enable-static=yes --host=mipsel-unknown-linux-gnu
 ```
