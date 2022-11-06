@@ -118,9 +118,16 @@ when we've copied the gcc / c runtime static libs in /usr/local/lib, appending L
 ./configure --includedir="/usr/local/musl/include" --libdir="/usr/local/musl/lib" --static --sharedlibdir=.
 ```
 
-### libxml2
+### libxml2 
 ```
 ./configure CC="/usr/local/musl/bin/musl-gcc" --includedir="/usr/local/musl/include /usr/local/include" --libdir="/usr/local/musl/lib" --with-zlib --without-python --host=mipsel-unknown-linux-gnu
+```
+
+### expat (alternative)
+```
+export LDFLAGS=-Wl,-L/usr/local/musl/lib,-lexpat
+export CPPFLAGS=-I/usr/local/musl/include
+./configure --prefix=/usr/local/musl --with-expat --enable-static --host=mipsel-unknown-linux-gnu
 ```
 
 ### davfs2
