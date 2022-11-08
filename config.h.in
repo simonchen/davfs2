@@ -11,6 +11,8 @@
    this is either `int' or `gid_t'. */
 #undef GETGROUPS_T
 
+#define HAVE_REGEX_H 1
+
 /* Define to 1 if you have the Mac OS X function CFLocaleCopyCurrent in the
    CoreFoundation framework. */
 #undef HAVE_CFLOCALECOPYCURRENT
