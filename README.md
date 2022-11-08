@@ -2,7 +2,8 @@
 Mount a WebDAV resource as a regular file system.
 the current source has pulled from http://download.savannah.nongnu.org/releases/davfs2/
 
-# dockcross - compile issues
+# Revision for adapting mulsel Arch.
+Here I've revised some codes and adding some missing sources such as fstab.c / rsmatch.
 
 ## Using musl-gcc wrapper insted of Toolchain gcc compiler
 Refers to https://www.musl-libc.org/faq.html
