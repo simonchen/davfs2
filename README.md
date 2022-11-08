@@ -4,6 +4,7 @@ the current source has pulled from http://download.savannah.nongnu.org/releases/
 
 # Revision for adapting mulsel Arch.
 Here I've revised some codes and adding some missing sources such as fstab.c / rsmatch.
+thus, alonging to change config.h.in and src/Makefile.in
 
 ## Using musl-gcc wrapper insted of Toolchain gcc compiler
 Refers to https://www.musl-libc.org/faq.html
