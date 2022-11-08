@@ -67,9 +67,10 @@
 #endif
 
 #ifdef __linux__
-#include <error.h>
+#include <err.h>
 #define ERR_AT_LINE(filename, lineno, fmt, ...) \
-    error_at_line(EXIT_FAILURE, 0, filename, lineno, fmt, ## __VA_ARGS__);
+    //error_at_line(EXIT_FAILURE, 0, filename, lineno, fmt, ##args);
+    
 #endif
 
 #ifdef __FreeBSD__
@@ -78,7 +79,9 @@
 #endif
 
 #ifdef __linux__
-#define mcanonicalize_file_name canonicalize_file_name
+#define mcanonicalize_file_name(path) \
+    realpath(path, NULL)
+//#define mcanonicalize_file_name canonicalize_file_name 
 #endif
 
 #endif /* __DAVFS_UTIL_H */

@@ -82,6 +82,7 @@
 #define _(String) String
 #endif
 
+#include "rpmatch.h"
 
 /* Data Types */
 /*============*/

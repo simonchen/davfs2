@@ -79,6 +79,7 @@
 /* The file davfs reads mtab entries from. If not available it will
    use _PATH_MOUNTED. */
 #define DAV_MOUNTS "/proc/mounts"
+#define _PATH_MOUNTED DAV_MOUNTS
 
 /* The directory where the cache files will be stored, when mounted by
    a non root users; relative to DAV_USER_DIR.
