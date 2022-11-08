@@ -1,4 +1,4 @@
-# davfs2 (v1.7.0) ongoing cross-platform compliation
+# davfs2 (base of v1.7.0) ongoing cross-platform compliation
 Mount a WebDAV resource as a regular file system.
 the current source has pulled from http://download.savannah.nongnu.org/releases/davfs2/
 
