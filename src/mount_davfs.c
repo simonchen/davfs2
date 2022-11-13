@@ -252,7 +252,7 @@ main(int argc, char *argv[])
 
     pidfile = check_double_mounts(args);
 
-    change_persona(args);
+    //change_persona(args);
 
     dav_init_webdav(args);
 
