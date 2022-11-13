@@ -8,7 +8,7 @@ thus, alonging to change config.h.in and src/Makefile.in
 
 # Customize features
 1. secrets file doesn't have to be same as current user (permission check is removed)
-
+2. davfs2.conf, the variable dav_user / dav_group can be read from user config file, therefore, the mount hasn't to be run at 'davfs2' group. 
 
 # 当前Release bin只支持musel 架构（例如MT7620/MT7621 soc)
 注意：要使用davfs2， 必须确认linux kernel包含/sys/fs/fuse.ko (例如：Padavan 需要在编译时包含fuse)
