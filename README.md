@@ -6,6 +6,10 @@ the current source has pulled from http://download.savannah.nongnu.org/releases/
 Here I've revised some codes and adding some missing sources such as fstab.c / rsmatch.
 thus, alonging to change config.h.in and src/Makefile.in
 
+# Customize features
+1. secrets file doesn't have to be same as current user (permission is removed)
+
+
 # 当前Release bin只支持musel 架构（例如MT7620/MT7621 soc)
 注意：要使用davfs2， 必须确认linux kernel包含/sys/fs/fuse.ko (例如：Padavan 需要在编译时包含fuse)
 
