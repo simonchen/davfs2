@@ -1,4 +1,4 @@
-# davfs2 (base of v1.7.0) 
+# davfs2 (based on v1.7.0) 
 Mount a WebDAV resource as a regular file system.
 the current source has pulled from http://download.savannah.nongnu.org/releases/davfs2/
 
