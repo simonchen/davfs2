@@ -7,7 +7,7 @@ Here I've revised some codes and adding some missing sources such as fstab.c / r
 thus, alonging to change config.h.in and src/Makefile.in
 
 # Customize features
-1. secrets file doesn't have to be same as current user (permission is removed)
+1. secrets file doesn't have to be same as current user (permission check is removed)
 
 
 # 当前Release bin只支持musel 架构（例如MT7620/MT7621 soc)
