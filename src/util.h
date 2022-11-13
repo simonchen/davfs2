@@ -29,7 +29,7 @@
 
 #ifdef ERR
 #undef ERR
-#endif
+#endif 
 
 #define ERR(fmt, ...) { \
     if (errno != 0) \
@@ -70,7 +70,10 @@
 #include <err.h>
 #define ERR_AT_LINE(filename, lineno, fmt, ...) \
     //error_at_line(EXIT_FAILURE, 0, filename, lineno, fmt, ##args);
-    
+    va_list args;
+    va_start(args, fmt);
+    vprintf(fmt, args);
+    va_end(args);
 #endif
 
 #ifdef __FreeBSD__
