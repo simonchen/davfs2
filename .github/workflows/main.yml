@@ -14,6 +14,7 @@ jobs:
           docker run mipsel-lts-linux-gnu > mipsel-lts-linux-gnu
           chmod +x mipsel-lts-linux-gnu
           sudo ./mipsel-lts-linux-gnu bash
+          apt-get update && apt-get -y install gcc mono-mcs 
           chmod +x configure CL.sh
           ls -lt
           ./CL.sh mipsel-unknown-linux-gnu
