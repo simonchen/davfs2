@@ -16,7 +16,7 @@ jobs:
           sudo ./mipsel-lts-linux-gnu bash
           apt-get update && apt-get -y install gcc mono-mcs 
           chmod +x configure CL.sh
-          ls -lt
+          ls -lt /usr/xcc
           ./CL.sh mipsel-unknown-linux-gnu
           
 
