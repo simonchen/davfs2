@@ -13,10 +13,11 @@ jobs:
           docker build . --build-arg ARCH=mipsel-lts -t mipsel-lts-linux-gnu --file Dockerfile
           docker run mipsel-lts-linux-gnu > mipsel-lts-linux-gnu
           chmod +x mipsel-lts-linux-gnu
-          sudo ./mipsel-lts-linux-gnu bash
+          ./mipsel-lts-linux-gnu bash
+          sudo su
           apt-get update && apt-get -y install gcc mono-mcs 
           chmod +x configure CL.sh
-          ls -lt /usr/xcc
+          ls -lt /usr
           ./CL.sh mipsel-unknown-linux-gnu
           
 
