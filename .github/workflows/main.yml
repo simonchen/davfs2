@@ -9,34 +9,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: MIPS Little Endian x32
-      run: docker build . --build-arg ARCH=mipsel -t mipsel-linux-gnu:$(date +%s) --file Dockerfile
+      run: docker build . --build-arg ARCH=mipsel-lts --build-arg HOST=mipsel-unknown-linux-gnu -t mipsel-unknown-linux-gnu:$(date +%s) --file Dockerfile
 
     - name: MIPS Big Endian x32
       if: success()
-      run: docker build . --build-arg ARCH=mips -t mips-linux-gnu:$(date +%s) --file Dockerfile
-
-  build_arm:
-    needs: build_mips
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: ARM Little Endian x32
-      if: success()
-      run: docker build . --build-arg ARCH=armel -t armel-linux-gnu:$(date +%s) --file Dockerfile
-
-    - name: ARM Big Endian x32
-      if: success()
-      run: docker build . --build-arg ARCH=armbe -t armbe-linux-gnu:$(date +%s) --file Dockerfile
-
-  build_other:
-    needs: [build_mips, build_arm]
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: PowerPC Big Endian x32
-      if: success()
-      run: docker build . --build-arg ARCH=powerpc -t powerpc-linux-gnu:$(date +%s) --file Dockerfile
-
-    - name: i686 Little Endian
-      if: success()
-      run: docker build . --build-arg ARCH=i686 -t i686-linux-gnu:$(date +%s) --file Dockerfile
+      run: docker build . --build-arg ARCH=mips --build-arg HOST=mipsel-unknown-linux-gnu -t mips-unknown-linux-gnu:$(date +%s) --file Dockerfile
