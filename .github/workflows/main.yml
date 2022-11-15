@@ -17,8 +17,8 @@ jobs:
           sudo su
           apt-get update && apt-get -y install gcc mono-mcs 
           chmod +x configure CL.sh
-          ls -lt /usr
-          ./CL.sh mipsel-unknown-linux-gnu
+          env
+          #./CL.sh mipsel-unknown-linux-gnu
           
 
     #- name: MIPS Big Endian x32
