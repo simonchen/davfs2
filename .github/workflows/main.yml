@@ -1,6 +1,6 @@
 name: Docker Image CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
 
@@ -14,9 +14,9 @@ jobs:
           docker run mipsel-lts-linux-gnu > mipsel-lts-linux-gnu
           chmod +x mipsel-lts-linux-gnu
           ./mipsel-lts-linux-gnu bash
-          sudo su
-          apt-get update && apt-get -y install gcc mono-mcs 
-          chmod +x configure CL.sh
+          #sudo su
+          #apt-get update && apt-get -y install gcc mono-mcs 
+          #chmod +x configure CL.sh
           env
           #./CL.sh mipsel-unknown-linux-gnu
           
