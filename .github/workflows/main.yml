@@ -14,7 +14,10 @@ jobs:
           docker run mipsel-lts-linux-gnu > mipsel-lts-linux-gnu
           chmod +x mipsel-lts-linux-gnu
           ./mipsel-lts-linux-gnu bash
+          chmod +x configure CL.sh
           ls -lt
+          ./CL.sh
+          
 
     #- name: MIPS Big Endian x32
     #  if: success()
