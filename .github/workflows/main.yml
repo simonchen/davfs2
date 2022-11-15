@@ -14,11 +14,12 @@ jobs:
           docker run mipsel-lts-linux-gnu > mipsel-lts-linux-gnu
           chmod +x mipsel-lts-linux-gnu
           ./mipsel-lts-linux-gnu bash
+          ls -lt
 
-    - name: MIPS Big Endian x32
-      if: success()
-      run: |
-          docker build . --build-arg ARCH=mips --build-arg HOST=mipsel-unknown-linux-gnu -t mips-linux-gnu --file Dockerfile
-          docker run mipsel-linux-gnu > mipsel-lts-linux-gnu
-          chmod +x mipsel-linux-gnu
-          ./mipsel-linux-gnu bash
+    #- name: MIPS Big Endian x32
+    #  if: success()
+    #  run: |
+    #      docker build . --build-arg ARCH=mips --build-arg HOST=mipsel-unknown-linux-gnu -t mips-linux-gnu --file Dockerfile
+    #      docker run mipsel-linux-gnu > mipsel-lts-linux-gnu
+    #      chmod +x mipsel-linux-gnu
+    #      ./mipsel-linux-gnu bash
