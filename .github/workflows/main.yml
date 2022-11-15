@@ -10,13 +10,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: MIPS Little Endian x32
       run: |
-          docker build . --build-arg ARCH=mipsel-lts --build-arg HOST=mipsel-unknown-linux-gnu -t mipsel-lts-linux-gnu --file Dockerfile
+          docker build . --build-arg ARCH=mipsel-lts -t mipsel-lts-linux-gnu --file Dockerfile
           docker run mipsel-lts-linux-gnu > mipsel-lts-linux-gnu
           chmod +x mipsel-lts-linux-gnu
           ./mipsel-lts-linux-gnu bash
           chmod +x configure CL.sh
           ls -lt
-          ./CL.sh
+          ./CL.sh mipsel-unknown-linux-gnu
           
 
     #- name: MIPS Big Endian x32
