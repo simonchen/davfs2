@@ -1,3 +1,4 @@
+#!/bin/sh
 HOST=$1
 tar -xzvf ./musl-1.2.3.tar.gz -C . &&
 tar -xzvf ./zlib-1.2.11.tar.gz -C . &&
