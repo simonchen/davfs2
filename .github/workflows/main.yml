@@ -16,7 +16,8 @@ jobs:
           #sudo su
           #apt-get update && apt-get -y install gcc mono-mcs 
           #chmod +x configure CL.sh
-          env
+          docker images
+          docker ps
           #./CL.sh mipsel-unknown-linux-gnu
           
 
