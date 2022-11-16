@@ -11,7 +11,8 @@ jobs:
     - name: MIPS Little Endian x32
       run: |
           docker build . --build-arg ARCH=mipsel-lts -t mipsel-lts-linux-gnu --file Dockerfile &&
-          docker run mipsel-lts-linux-gnu && env
+          docker run -i -t mipsel-lts-linux-gnu
+          env
           #sudo su
           #apt-get update && apt-get -y install gcc mono-mcs 
           #chmod +x configure CL.sh
