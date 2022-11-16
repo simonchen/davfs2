@@ -15,11 +15,10 @@ jobs:
           chmod +x dockcross
           ./dockcross --help
           ./dockcross -i mipsel-lts-linux-gnu
+          env
           #sudo su
           #apt-get update && apt-get -y install gcc mono-mcs 
           #chmod +x configure CL.sh
-          docker images
-          docker ps
           #./CL.sh mipsel-unknown-linux-gnu
           
 
