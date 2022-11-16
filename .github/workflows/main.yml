@@ -14,7 +14,7 @@ jobs:
           docker run mipsel-lts-linux-gnu > ./dockcross
           chmod +x dockcross
           ls -lt
-          ./dockcross
+          ./dockcross bash
           #sudo su
           #apt-get update && apt-get -y install gcc mono-mcs 
           #chmod +x configure CL.sh
