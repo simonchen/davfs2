@@ -11,7 +11,7 @@ jobs:
     - name: MIPS Little Endian x32
       run: |
           docker build . --build-arg ARCH=mipsel-lts --build-arg HOST=mipsel-unknown-linux-gnu -t mipsel-lts-linux-gnu --file Dockerfile
-          #docker run mipsel-lts-linux-gnu
+          docker run mipsel-lts-linux-gnu
 
     #- name: MIPS Big Endian x32
     #  if: success()
