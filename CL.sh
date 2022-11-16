@@ -9,7 +9,7 @@ tar -xzvf ./neon-0.31.0.tar.gz -C . &&
 
 #./musl-1.2.3/configure --host=$HOST && make install &&
 #./zlib-1.2.11/configure --includedir="/usr/local/musl/include" --libdir="/usr/local/musl/lib" --static --sharedlibdir=. && make install &&
-cd ./expat-2.5.0 && ./configure --prefix=/usr/local/musl --enable-static --host=$HOST && make install && cd .. &&
+cd ./expat-2.5.0 && ./configure --prefix=/usr/local/musl --host=$HOST && make install && cd .. &&
 #export LDFLAGS=-Wl,-L/usr/local/musl/lib,-lexpat &&
 #export CPPFLAGS=-I/usr/local/musl/include &&
 #./configure --prefix=/usr/local/musl --with-expat --enable-static --host=$HOST && make install &&
