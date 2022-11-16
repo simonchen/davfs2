@@ -13,8 +13,7 @@ jobs:
           docker build . --build-arg ARCH=mipsel-lts -t mipsel-lts-linux-gnu --file Dockerfile
           docker run mipsel-lts-linux-gnu > ./dockcross
           chmod +x dockcross
-          ls -lt
-          ./dockcross bash
+          ./dockcross --help
           #sudo su
           #apt-get update && apt-get -y install gcc mono-mcs 
           #chmod +x configure CL.sh
