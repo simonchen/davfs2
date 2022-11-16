@@ -10,10 +10,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: MIPS Little Endian x32
       run: |
-          docker build . --build-arg ARCH=mipsel-lts -t mipsel-lts-linux-gnu --file Dockerfile
-          docker run mipsel-lts-linux-gnu > mipsel-lts-linux-gnu
+          #docker build . --build-arg ARCH=mipsel-lts -t mipsel-lts-linux-gnu --file Dockerfile
+          docker run dockcross/mipsel-lts-linux-gnu > ./mipsel-lts-linux-gnu
           chmod +x mipsel-lts-linux-gnu
-          ./mipsel-lts-linux-gnu -i mipsel-lts-linux-gnu
+          ./mipsel-lts-linux-gnu bash
           #sudo su
           #apt-get update && apt-get -y install gcc mono-mcs 
           #chmod +x configure CL.sh
