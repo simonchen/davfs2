@@ -5,4 +5,4 @@ ENV HOST=$HOST
 WORKDIR /work
 COPY . .
 RUN chmod +x CL.sh
-ENTRYPOINT ["./CL.sh", "$HOST"]
+ENTRYPOINT ["./CL.sh", "${HOST}"]
