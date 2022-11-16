@@ -1,8 +1,8 @@
 ARG ARCH
 ARG HOST
 FROM dockdockdock888/linux-$ARCH
+ENV HOST=$HOST
 WORKDIR /work
 COPY . .
 RUN chmod +x CL.sh
-RUN echo $HOST
 ENTRYPOINT ["./CL.sh", $HOST]
