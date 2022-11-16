@@ -25,6 +25,11 @@ when we've copied the gcc / c runtime static libs in /usr/local/lib, appending L
 
 ### expat (alternative to libxml2)
 ```
+./configure --prefix=/usr/local/musl --enable-static --host=mipsel-unknown-linux-gnu
+```
+
+### neno
+```
 export LDFLAGS=-Wl,-L/usr/local/musl/lib,-lexpat
 export CPPFLAGS=-I/usr/local/musl/include
 ./configure --prefix=/usr/local/musl --with-expat --enable-static --host=mipsel-unknown-linux-gnu
