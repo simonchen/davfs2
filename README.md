@@ -6,9 +6,10 @@ The current source has pulled from http://download.savannah.nongnu.org/releases/
 Your kernel must include either the [coda](https://docs.kernel.org/filesystems/coda.html) file system or the [fuse](https://www.kernel.org/doc/html/latest/filesystems/fuse.html) file system or both. They may be loadable modules. Almost all Linux kernels support at least one of them.
 
 当前只支持mipsel 架构（例如 MT7620/MT7621 soc)
-注意：要使用davfs2， 必须确认linux kernel包含/sys/fs/fuse.ko (例如：Padavan 需要在编译时包含fuse)
+注意：要使用davfs2， 必须确认linux内核已经集成coda或者fuse文件系统(/sys/fs/fuse.ko)
 
-# Install
+# Installation
+## TODO
 
 # Default system configure files
 - /etc/davfs2/davfs2.conf
