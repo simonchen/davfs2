@@ -14,7 +14,7 @@ jobs:
           docker build . --build-arg ARCH=mipsel-lts --build-arg HOST=mipsel-unknown-linux-gnu --no-cache -t mipsel-lts-linux-gnu --file Dockerfile
           docker run --name release mipsel-lts-linux-gnu 
           docker ps -a
-          docker cp release:/work/mount.davfs ./release/
+          docker cp release:/work/release/mount.davfs ./release/
     - name: Upload binary artifacts
       uses: actions/upload-artifact@v3
       with:
