@@ -7,7 +7,7 @@ The current source has pulled from http://download.savannah.nongnu.org/releases/
 
 # Install
 
-# Default system config files
+# Default system configure files
 - /etc/davfs2/davfs2.conf
 - /etc/davfs2/secrets
 
@@ -15,7 +15,7 @@ The current source has pulled from http://download.savannah.nongnu.org/releases/
 - dav_user: admin
 - dav_group: root
 
-# Customize config
+# Customized configuration
 The default system configure file can be overridden by command option for example:
 ```
 mount.davfs2 <server-url> <mountpoint> -o conf=/tmp/davfs2.conf
