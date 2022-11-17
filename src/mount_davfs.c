@@ -246,7 +246,7 @@ main(int argc, char *argv[])
 
     check_dirs(args);
 
-    check_permissions(args);
+    check_permissions(args); 
 
     parse_secrets(args);
 
@@ -2171,12 +2171,13 @@ read_config(dav_args *args, const char * filename, int system)
             }
 
         } else if (applies && count == 2) {
-
-            if (system && strcmp(parmv[0], "dav_user") == 0) {
+	    //ERR("parmv[0]=%s, parmv[1]=%s", parmv[0], parmv[1]);
+            if (strcmp(parmv[0], "dav_user") == 0) { // system wide is no need // 2022-11-13 simonchen
+		//ERR(_("READ dav_user"));
                 if (args->dav_user)
                     free(args->dav_user);
                 args->dav_user = ne_strdup(parmv[1]);
-            } else if (system && strcmp(parmv[0], "dav_group") == 0) {
+            } else if (strcmp(parmv[0], "dav_group") == 0) { // system wide is no need // 2022-11-13 simonchen
                 if (args->dav_group)
                     free(args->dav_group);
                 args->dav_group = ne_strdup(parmv[1]);
@@ -2377,11 +2378,13 @@ read_secrets(dav_args *args, const char *filename)
                _("opening %s failed"), filename);
         return;
     }
+    /* don't check permission that have to be current user - 2022/11/13 simonchen
     if (st.st_uid != geteuid())
         ERR(_("file %s has wrong owner"), filename);
     if ((st.st_mode &
           (S_IXUSR | S_IRWXG | S_IRWXO | S_ISUID | S_ISGID | S_ISVTX)) != 0)
         ERR(_("file %s has wrong permissions"), filename);
+    */
 
     FILE *file = fopen(filename, "r");
     if (!file) {
