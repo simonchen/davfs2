@@ -7,11 +7,22 @@ The current source has pulled from http://download.savannah.nongnu.org/releases/
 
 # Install
 
-# Default system config
+# Default system config files
 - /etc/davfs2/davfs2.conf
 - /etc/davfs2/secrets
+
+# Default permission with user / group
 - dav_user: admin
 - dav_group: root
+
+# Customize config
+The default system configure file can be overridden by command option for example:
+```
+mount.davfs2 <server-url> <mountpoint> -o conf=/tmp/davfs2.conf
+```
+`/tmp/davfs2.conf` is the customized configure file to overwrite the default system config,
+**Note** more options such as `secret`, `dav_user`, `dav_grou` etc. can be overridden in `davfs2.conf`
+      you should know that `/tmp/davfs2.conf` could be lost once you restart system, please make sure that you put `davfs2conf` in a permanent directory.
 
 # Remove permission limitation 
 - **davfs2_secrets** the owner of secrets file doesn't have to be same as current user (permission check is removed)
