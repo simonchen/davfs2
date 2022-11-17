@@ -1,16 +1,15 @@
 #!/bin/sh
 HOST=$1
-echo "$HOST"
 
 #tar -xzvf ./musl-1.2.3.tar.gz -C . &&
 #tar -xzvf ./zlib-1.2.11.tar.gz -C . &&
 tar -xzvf ./expat-2.5.0.tar.gz -C . &&
 #tar -xzvf ./neon-0.31.0.tar.gz -C . &&
-
+echo "$HOST"
 #./musl-1.2.3/configure --host=$HOST && make install &&
 #./zlib-1.2.11/configure --includedir="/usr/local/musl/include" --libdir="/usr/local/musl/lib" --static --sharedlibdir=. && make install &&
 echo "\n================ EXPAT COMPLATION =================\n"
-cd ./expat-2.5.0 && ./configure --host=$HOST && make install && cd .. 
+cd ./expat-2.5.0 && chmod +x ./configure && ./configure --host=$HOST && make install && cd .. 
 cat config.log
 #export LDFLAGS=-Wl,-L/usr/local/musl/lib,-lexpat &&
 #export CPPFLAGS=-I/usr/local/musl/include &&
