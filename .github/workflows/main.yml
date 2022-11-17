@@ -19,7 +19,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: mipsel-unknown-linux-gnu-bin
-          path: ./release/*
+          path: ./release/
           if-no-files-found: error
 
     #- name: MIPS Big Endian x32
