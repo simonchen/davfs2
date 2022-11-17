@@ -1,4 +1,4 @@
-name: Release
+name: Cross-Release
 
 on: [push]
 
@@ -13,13 +13,13 @@ jobs:
           mkdir ./release
           docker build . --build-arg ARCH=mipsel-lts --build-arg HOST=mipsel-unknown-linux-gnu --no-cache -t mipsel-lts-linux-gnu --file Dockerfile
           docker run --name release mipsel-lts-linux-gnu 
-          docker ps -a
-          docker cp release:/work/release/mount.davfs ./release/
+          #docker ps -a
+          docker cp release:/work/release/* ./release/
     - name: Upload binary artifacts
       uses: actions/upload-artifact@v3
       with:
           name: mipsel-unknown-linux-gnu-bin
-          path: ./release/mount.davfs
+          path: ./release/*
           if-no-files-found: error
 
     #- name: MIPS Big Endian x32
