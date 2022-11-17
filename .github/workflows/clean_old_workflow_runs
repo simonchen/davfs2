@@ -1,3 +1,4 @@
+name: Clean Old Workflow Runs
 on: [push]
 
 jobs:
