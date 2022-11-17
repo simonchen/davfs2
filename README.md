@@ -18,6 +18,11 @@ Refers to https://www.musl-libc.org/faq.html
 
 when we've copied the gcc / c runtime static libs in /usr/local/lib, appending LDFLAGS="-L/usr/local/lib" that tells gcc to link libs in the directory as priority.
 
+### musl
+```
+./configure --host=mipsel-unknown-linux-gnu && make install
+```
+
 ### zlib
 ```
 ./configure --prefix=/usr/local/musl --includedir="/usr/local/musl/include" --libdir="/usr/local/musl/lib" --static --sharedlibdir=.
