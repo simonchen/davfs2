@@ -21,8 +21,8 @@ echo "\n================ neon COMPLATION =================\n"
 #export LDFLAGS=-Wl,-L/usr/local/musl/lib,-lexpat &&
 #export CPPFLAGS=-I/usr/local/musl/include &&
 cd ./neon-0.31.0 && ./configure LDFLAGS="-Wl,-L/usr/local/musl/lib,-lexpat" CPPFLAGS=-I/usr/local/musl/include --prefix=/usr/local/musl --with-expat --enable-static --host=$ENV_HOST && make install && cd .. &&
-ln -s /usr/local/musl/bin/neon-config /usr/local/bin/neon-config &&
 cat ./neon-0.31.0/config.log
+ln -s /usr/local/musl/bin/neon-config /usr/local/bin/neon-config &&
 
 echo "\n================ DAVFS2 COMPLATION =================\n"
 chmod +x ./configure
