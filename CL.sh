@@ -9,8 +9,7 @@ echo "$HOST"
 #./musl-1.2.3/configure --host=$HOST && make install &&
 #./zlib-1.2.11/configure --includedir="/usr/local/musl/include" --libdir="/usr/local/musl/lib" --static --sharedlibdir=. && make install &&
 echo "\n================ EXPAT COMPLATION =================\n"
-cd ./expat-2.5.0 && chmod +x ./configure && ./configure --host=$HOST && make install && cd .. 
-cat config.log
+cd ./expat-2.5.0 && ./configure --host=mipsel-unknown-linux-gnu && make install && cd .. 
 #export LDFLAGS=-Wl,-L/usr/local/musl/lib,-lexpat &&
 #export CPPFLAGS=-I/usr/local/musl/include &&
 #./configure --prefix=/usr/local/musl --with-expat --enable-static --host=$HOST && make install &&
