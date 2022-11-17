@@ -1,17 +1,36 @@
-name: Clean Old Workflow Runs
-on: [push]
+name: Delete old workflow runs
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Number of days.'
+        required: true
+        default: 30
+      minimum_runs:
+        description: 'The minimum runs to keep for each workflow.'
+        required: true
+        default: 6
+      delete_workflow_pattern:
+        description: 'The name or filename of the workflow. if not set then it will target all workflows.'
+        required: false
+      delete_workflow_by_state_pattern:
+        description: 'Remove workflow by state: active, deleted, disabled_fork, disabled_inactivity, disabled_manually'
+        required: false
+      dry_run:
+        description: 'Only log actions, do not perform any delete operations.'
+        required: false
 
 jobs:
-  delete-workflow-runs:
+  del_runs:
     runs-on: ubuntu-latest
-    name: Clean old workflow runs
     steps:
       - name: Delete workflow runs
-        uses: MajorScruffy/delete-old-workflow-runs@v0.2.0
+        uses: Mattraks/delete-workflow-runs@v2
         with:
-          repository: simonchen/davfs2
-          workflow: ".github/workflows/main.yml"
-          status: failure
-          older-than-seconds: 86400                           # remove all workflow runs older than 1 day
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: ${{ github.event.inputs.days }}
+          keep_minimum_runs: ${{ github.event.inputs.minimum_runs }}
+          delete_workflow_pattern: ${{ github.event.inputs.delete_workflow_pattern }}
+          delete_workflow_by_state_pattern: ${{ github.event.inputs.delete_workflow_by_state_pattern }}
+          dry_run: ${{ github.event.inputs.dry_run }}
