@@ -2,12 +2,14 @@
 Mount a WebDAV resource as a regular file system.
 The current source has pulled from http://download.savannah.nongnu.org/releases/davfs2/ (original v1.7.0)
 
-# Wireless router firmware customized (on linux)
-1. the owner of secrets file doesn't have to be same as current user (permission check is removed)
-2. davfs2.conf, the variable dav_user / dav_group can be loaded from user config file (as system wide), therefore, the mount hasn't to be run at 'davfs2' group. 
-
-# 当前Release bin只支持musel 架构（例如MT7620/MT7621 soc)
+当前只支持musel 架构（例如MT7620/MT7621 soc)
 注意：要使用davfs2， 必须确认linux kernel包含/sys/fs/fuse.ko (例如：Padavan 需要在编译时包含fuse)
+
+# Install
+
+# Remove permission limitation 
+- **davfs2_secrets** the owner of secrets file doesn't have to be same as current user (permission check is removed)
+- **davfs2.conf**  natively, dav_user / dav_group was customized as system wide, the group name must be 'davfs2' 
 
 ## Using musl-gcc wrapper insted of Toolchain gcc compiler
 Refers to https://www.musl-libc.org/faq.html
