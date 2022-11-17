@@ -11,6 +11,15 @@ Your kernel must include either the [coda](https://docs.kernel.org/filesystems/c
 # Installation
 ## TODO
 
+# Quick start - Mount the WebDAV-resource
+assume that you have built the WebDav-resource as web url http://0.0.0.0:8080
+and you wanna mount to /mnt/fuse , you can type in the command line as follow:
+```
+./mount.davfs http://0.0.0.0:8080 /mnt/fuse
+```
+**Note**
+- the command line will be running at default user / group (see below)
+
 # Default system configure files
 - /etc/davfs2/davfs2.conf
 - /etc/davfs2/secrets
@@ -26,8 +35,9 @@ mount.davfs2 <server-url> <mountpoint> -o conf=/tmp/davfs2.conf
 ```
 Here `/tmp/davfs2.conf` is the customized configure file that have overwrited the default system config,
 
-**Note** more options such as `secret`, `dav_user`, `dav_group` etc. can be overridden in `davfs2.conf`
-      you should know that `/tmp/davfs2.conf` could be lost once you restart system, please make sure that you put `davfs2conf` in a permanent directory.
+**Note** 
+- more options such as `secret`, `dav_user`, `dav_group` etc. can be overridden in `davfs2.conf`
+- you should know that `/tmp/davfs2.conf` could be lost once you restart system, please make sure that you put `davfs2conf` in a permanent directory.
 
 # Remove permission limitation 
 - **davfs2_secrets** the owner of secrets file doesn't have to be same as current user (permission check is removed)
