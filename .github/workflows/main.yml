@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Release
 
 on: [push]
 
@@ -10,13 +10,15 @@ jobs:
     - uses: actions/checkout@v3
     - name: MIPS Little Endian x32
       run: |
+          mkdir /opt/release
           docker build . --build-arg ARCH=mipsel-lts --build-arg HOST=mipsel-unknown-linux-gnu --no-cache -t mipsel-lts-linux-gnu --file Dockerfile
-          docker run mipsel-lts-linux-gnu
+          docker run --name release mipsel-lts-linux-gnu
+          docker cp release:/user/local/musl/sbin/*davfs /opt/release/
     - name: Upload binary artifacts
       uses: actions/upload-artifact@v3
       with:
           name: mipsel-unknown-linux-gnu-bin
-          path: /usr/local/musl/sbin/mount.davfs
+          path: /opt/release/*davfs
           if-no-files-found: error
 
     #- name: MIPS Big Endian x32
