@@ -15,7 +15,7 @@ Your kernel must include either the [coda](https://docs.kernel.org/filesystems/c
 - /etc/davfs2/davfs2.conf
 - /etc/davfs2/secrets
 
-# Default permission with user / group
+# Default user / group
 - dav_user: admin
 - dav_group: root
 
@@ -26,7 +26,7 @@ mount.davfs2 <server-url> <mountpoint> -o conf=/tmp/davfs2.conf
 ```
 Here `/tmp/davfs2.conf` is the customized configure file that have overwrited the default system config,
 
-**Note** more options such as `secret`, `dav_user`, `dav_grou` etc. can be overridden in `davfs2.conf`
+**Note** more options such as `secret`, `dav_user`, `dav_group` etc. can be overridden in `davfs2.conf`
       you should know that `/tmp/davfs2.conf` could be lost once you restart system, please make sure that you put `davfs2conf` in a permanent directory.
 
 # Remove permission limitation 
