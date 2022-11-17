@@ -20,7 +20,7 @@ cd ./expat-2.5.0 && ./configure --enable-static --host=$ENV_HOST && make install
 echo "\n================ neon COMPLATION =================\n"
 export LDFLAGS=-Wl,-L/usr/local/musl/lib,-lexpat &&
 export CPPFLAGS=-I/usr/local/musl/include &&
-./neon-0.31.0/configure --prefix=/usr/local/musl --with-expat --enable-static --host=$ENV_HOST && make install &&
+cd ./neon-0.31.0 && ./configure --prefix=/usr/local/musl --with-expat --enable-static --host=$ENV_HOST && make install && cd .. &&
 ln -s /usr/local/musl/bin/neon-config /usr/local/bin/neon-config &&
 
 echo "\n================ DAVFS2 COMPLATION =================\n"
