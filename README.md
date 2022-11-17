@@ -7,6 +7,12 @@ The current source has pulled from http://download.savannah.nongnu.org/releases/
 
 # Install
 
+# Default system config
+- /etc/davfs2/davfs2.conf
+- /etc/davfs2/secrets
+- dav_user: admin
+- dav_group: root
+
 # Remove permission limitation 
 - **davfs2_secrets** the owner of secrets file doesn't have to be same as current user (permission check is removed)
 - **davfs2.conf**  natively, dav_user / dav_group was customized as system wide, the group name must be 'davfs2' 
