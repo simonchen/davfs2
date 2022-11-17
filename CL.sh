@@ -28,4 +28,5 @@ echo "\n================ DAVFS2 COMPLATION =================\n"
 chmod +x ./configure
 ./configure CC="/usr/local/musl/bin/musl-gcc" CFLAGS="-I/user/local/musl/include -I/usr/local/musl/include/neon" CPPFLAGS="-I/usr/local/musl/include -I/usr/local/musl/include/neon" LDFLAGS="-Wl,-Bstatic -L/usr/local/musl/lib" --prefix=/usr/local/musl --host=$ENV_HOST && make install
 
-echo "\n================ DONE =============================\n"
+echo "\n================ COPY BIN =============================\n"
+cp /usr/local/musl/sbin/mount.davfs ./release/
