@@ -5,4 +5,4 @@ ENV ENV_HOST=$HOST
 WORKDIR /work
 COPY . .
 RUN chmod +x CL.sh
-ENTRYPOINT ./CL.sh $ENV_HOST
+ENTRYPOINT ./CL.sh
