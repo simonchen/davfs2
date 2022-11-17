@@ -13,7 +13,7 @@ jobs:
           mkdir /opt/release
           docker build . --build-arg ARCH=mipsel-lts --build-arg HOST=mipsel-unknown-linux-gnu --no-cache -t mipsel-lts-linux-gnu --file Dockerfile
           docker run --name release mipsel-lts-linux-gnu
-          docker cp release:/user/local/musl/sbin/*davfs /opt/release/
+          docker cp release:/usr/local/musl/sbin/*davfs /opt/release/
     - name: Upload binary artifacts
       uses: actions/upload-artifact@v3
       with:
