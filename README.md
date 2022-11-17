@@ -20,7 +20,8 @@ The default system configure file can be overridden by command option for exampl
 ```
 mount.davfs2 <server-url> <mountpoint> -o conf=/tmp/davfs2.conf
 ```
-`/tmp/davfs2.conf` is the customized configure file to overwrite the default system config,
+Here `/tmp/davfs2.conf` is the customized configure file that have overwrited the default system config,
+
 **Note** more options such as `secret`, `dav_user`, `dav_grou` etc. can be overridden in `davfs2.conf`
       you should know that `/tmp/davfs2.conf` could be lost once you restart system, please make sure that you put `davfs2conf` in a permanent directory.
 
