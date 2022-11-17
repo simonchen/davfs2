@@ -11,7 +11,7 @@ The current source has pulled from http://download.savannah.nongnu.org/releases/
 - **davfs2_secrets** the owner of secrets file doesn't have to be same as current user (permission check is removed)
 - **davfs2.conf**  natively, dav_user / dav_group was customized as system wide, the group name must be 'davfs2' 
 
-## Using musl-gcc wrapper insted of Toolchain gcc compiler
+# For developer: Using musl-gcc wrapper insted of Toolchain gcc compiler
 Refers to https://www.musl-libc.org/faq.html
 
 Adding some missing sources such as fstab.c / rsmatch that musl didn't provide,
