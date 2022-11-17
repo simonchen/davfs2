@@ -24,13 +24,13 @@ jobs:
       if: "startsWith(github.ref, 'refs/tags/')"
       run: |
         cd ./release
-        tar --exclude=mipsel-unknown-linux-gnu-bin.tar.gz -czvf mipsel-unknown-linux-gnu-bin.tar.gz -C ./ .
+        tar -czvf ../mipsel-unknown-linux-gnu-bin.tar.gz -C ./ .
         cd -
     - name: Upload binary to GitHub Release
       uses: softprops/action-gh-release@v1
       if: "startsWith(github.ref, 'refs/tags/')"
       with:
-        files: ./release/mipsel-unknown-linux-gnu-bin.tar.gz
+        files: ./mipsel-unknown-linux-gnu-bin.tar.gz
         prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') }}
         generate_release_notes: true
 
