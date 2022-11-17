@@ -18,10 +18,11 @@ tar -xzvf ./neon-0.31.0.tar.gz -C . &&
 #cd ./expat-2.5.0 && ./configure --enable-static --host=$ENV_HOST && make install && cd .. && 
 
 echo "\n================ neon COMPLATION =================\n"
-#export LDFLAGS=-Wl,-L/usr/local/musl/lib,-lexpat &&
-#export CPPFLAGS=-I/usr/local/musl/include &&
+export LDFLAGS=-Wl,-L/usr/local/musl/lib,-lexpat &&
+export CPPFLAGS=-I/usr/local/musl/include &&
 cd ./neon-0.31.0 && ./configure --prefix=/usr/local/musl --with-expat --enable-static --host=$ENV_HOST && make install && cd .. &&
 ln -s /usr/local/musl/bin/neon-config /usr/local/bin/neon-config &&
+cat ./neon-0.31.0/config.log
 
 echo "\n================ DAVFS2 COMPLATION =================\n"
 chmod +x ./configure
