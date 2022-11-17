@@ -11,7 +11,7 @@ jobs:
     - name: MIPS Little Endian x32
       run: |
           docker build . --build-arg ARCH=mipsel-lts --build-arg HOST=mipsel-unknown-linux-gnu --no-cache -t mipsel-lts-linux-gnu --file Dockerfile
-          #docker run mipsel-lts-linux-gnu
+          docker run mipsel-lts-linux-gnu
     - name: Upload binary artifacts
       uses: actions/upload-artifact@v3
       with:
