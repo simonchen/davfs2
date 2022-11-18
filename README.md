@@ -44,7 +44,7 @@ mount.davfs2 <server-url> <mountpoint> -o conf=/tmp/davfs2.conf
 Here **/tmp/davfs2.conf** is the customized configure file that have overwrited the default **/etc/davfs2/davfs2.conf**
 
 **Note** 
-- more options such as `secret`, `cache_dir`, `dav_user`, `dav_group` etc. can be overridden in `davfs2.conf`
+- more options such as `secrets`, `cache_dir`, `dav_user`, `dav_group` etc. can be overridden in `davfs2.conf`
 - you should know that `/tmp/davfs2.conf` could be lost once you restart system, please make sure that you put `davfs2conf` in a permanent directory.
 
 # Remove permission limitation 
