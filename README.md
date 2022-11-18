@@ -6,6 +6,7 @@ The current source has pulled from http://download.savannah.nongnu.org/releases/
 Your kernel must include either the [coda](https://docs.kernel.org/filesystems/coda.html) file system or the [fuse](https://www.kernel.org/doc/html/latest/filesystems/fuse.html) file system or both. They may be loadable modules. Almost all Linux kernels support at least one of them.
 
 当前只支持mipsel 架构（例如 MT7620/MT7621 soc)
+不支持WebDAV HTTPS
 注意：要使用davfs2， 必须确认linux内核已经集成coda或者fuse文件系统(/sys/fs/fuse.ko)
 
 # Installation
@@ -23,7 +24,7 @@ and you wanna mount to /mnt/fuse , you can type in the command line as follow:
 
 # Default configurations
 **/etc/davfs2/davfs2.conf**
-- `secrets`(optional): /etc/davfs2/secrets
+- `secrets`(optional): /etc/davfs2/davfs2_secrets
 - `cache_dir`: /tmp/cache_davfs2
 - `dav_user`: admin
 - `dav_group`: root
