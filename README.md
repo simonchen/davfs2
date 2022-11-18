@@ -18,21 +18,22 @@ and you wanna mount to /mnt/fuse , you can type in the command line as follow:
 ./mount.davfs http://0.0.0.0:8080 /mnt/fuse
 ```
 **Note**
-- the server url binds with certain `secrets` (optional), and the mount point binds with certain `dav_user` and `dav_group`  (see below)
+- the server url could need credential as a `secrets` file (optional), you will be asked the credential if there is no `secrets' file.
+- the mount point binds with certain `dav_user` and `dav_group`  (see below)
 
 # Default configurations
-- /etc/davfs2/davfs2.conf
-- `secrets`: /etc/davfs2/secrets
-- /tmp/cache_davfs2
-- dav_user: admin
-- dav_group: root
+**/etc/davfs2/davfs2.conf**
+- `secrets`(optional): /etc/davfs2/secrets
+- `cache_dir`: /tmp/cache_davfs2
+- `dav_user`: admin
+- `dav_group`: root
 
 # Customized configurations
 The default configurations can be overridden by command option for example:
 ```
 mount.davfs2 <server-url> <mountpoint> -o conf=/tmp/davfs2.conf
 ```
-Here `/tmp/davfs2.conf` is the customized configure file that have overwrited the default system config,
+Here **/tmp/davfs2.conf** is the customized configure file that have overwrited the default **/etc/davfs2/davfs2.conf**
 
 **Note** 
 - more options such as `secret`, `cache_dir`, `dav_user`, `dav_group` etc. can be overridden in `davfs2.conf`
