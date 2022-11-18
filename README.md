@@ -48,8 +48,8 @@ Here **/tmp/davfs2.conf** is the customized configure file that have overwrited 
 - you should know that `/tmp/davfs2.conf` could be lost once you restart system, please make sure that you put `davfs2conf` in a permanent directory.
 
 # Remove permission limitation 
-- **davfs2_secrets** the owner of secrets file doesn't have to be same as current user (permission check is removed)
-- **davfs2.conf**  natively, dav_user / dav_group was customized as system wide, the group name must be 'davfs2' 
+- **davfs2_secrets** The owner of secrets file doesn't have to be same as current user (permission check is removed)
+- **davfs2.conf**  Natively, `dav_user` `dav_group` can be only changed from system wide (i.e, **/etc/davfs2/davfs2.conf**), if you don't have permission to modify the sytem config file **/etc/davfs2/davfs2.conf**, the user / group name will always be `davfs2`, thus, you're in a trouble that you also have no permission to create the group as possible. For now, the limitation has been removed, `dav_user` `dav_group` can be changed from any scope whatever the **davfs2.conf** is located at.
 
 # For developer: Using musl-gcc wrapper instead of Toolchain gcc compiler
 Refers to https://www.musl-libc.org/faq.html
