@@ -20,23 +20,22 @@ and you wanna mount to /mnt/fuse , you can type in the command line as follow:
 **Note**
 - the server url binds with certain `secrets` (optional), and the mount point binds with certain `dav_user` and `dav_group`  (see below)
 
-# Default system configure files
+# Default configurations
 - /etc/davfs2/davfs2.conf
-- /etc/davfs2/secrets
-
-# Default user / group
+- `secrets`: /etc/davfs2/secrets
+- /tmp/cache_davfs2
 - dav_user: admin
 - dav_group: root
 
-# Customized configuration
-The default system configure file can be overridden by command option for example:
+# Customized configurations
+The default configurations can be overridden by command option for example:
 ```
 mount.davfs2 <server-url> <mountpoint> -o conf=/tmp/davfs2.conf
 ```
 Here `/tmp/davfs2.conf` is the customized configure file that have overwrited the default system config,
 
 **Note** 
-- more options such as `secret`, `dav_user`, `dav_group` etc. can be overridden in `davfs2.conf`
+- more options such as `secret`, `cache_dir`, `dav_user`, `dav_group` etc. can be overridden in `davfs2.conf`
 - you should know that `/tmp/davfs2.conf` could be lost once you restart system, please make sure that you put `davfs2conf` in a permanent directory.
 
 # Remove permission limitation 
