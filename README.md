@@ -10,7 +10,12 @@ Your kernel must include either the [coda](https://docs.kernel.org/filesystems/c
 - 注意：要使用davfs2， 必须确认linux内核已经集成coda或者fuse文件系统(/sys/fs/fuse.ko)
 
 # Installation
-## TODO
+You simply extract the released bin.tar.gz
+
+![image](https://user-images.githubusercontent.com/345840/202638456-ec56b8fc-2c44-409a-a810-16209779b399.png)
+
+- there are two exectuable files `mount.davfs2` `unmount.davfs2` can be put in system binary folder - `/sbin` or any directory you like
+- and the 'davfs2' folder should be put in system folder `/etc/` or any directory you like, but you'll need to manually finish the [Customized configurations](doc/README.md) (see below)
 
 # Quick start - Mount the WebDAV-resource
 assume that you have built the WebDav-resource with server url http://0.0.0.0:8080
