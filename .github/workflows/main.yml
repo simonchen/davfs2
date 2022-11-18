@@ -14,6 +14,21 @@ jobs:
           docker run --name release mipsel-lts-linux-gnu 
           #docker ps -a
           docker cp release:/work/release .
+    - name: Install upx
+      working-directory: /tmp
+      env:
+        CC: clang
+        CXX: clang++
+      run: |
+        set -ex
+        git clone --recursive https://github.com/upx/upx.git
+        cd upx
+        make
+        cp build/release/upx /usr/local/bin/upx
+    - name: Upx compress binary
+      run: |
+        upx ./release/mount.davfs
+        upx ./release/umount.davfs
     - name: Upload binary artifacts
       uses: actions/upload-artifact@v3
       with:
