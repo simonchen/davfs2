@@ -2192,7 +2192,7 @@ read_config(dav_args *args, const char * filename, int system)
                 if (args->trust_server_cert)
                     free(args->trust_server_cert);
                 args->trust_server_cert = ne_strdup(parmv[1]);
-            } else if (!system && strcmp(parmv[0], "secrets") == 0) {
+            } else if (strcmp(parmv[0], "secrets") == 0) { // system wide is no need // simonchen
                 if (args->secrets)
                     free(args->secrets);
                 args->secrets = ne_strdup(parmv[1]);
