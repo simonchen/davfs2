@@ -18,7 +18,7 @@ and you wanna mount to /mnt/fuse , you can type in the command line as follow:
 ./mount.davfs http://0.0.0.0:8080 /mnt/fuse
 ```
 **Note**
-- the server url binds with certain `secrets`, and the mount point binds with certain `dav_user` and `dav_group`  (see below)
+- the server url binds with certain `secrets` (optional), and the mount point binds with certain `dav_user` and `dav_group`  (see below)
 
 # Default system configure files
 - /etc/davfs2/davfs2.conf
