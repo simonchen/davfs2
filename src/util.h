@@ -66,14 +66,10 @@
 }
 #endif
 
+extern void ERR_AT_LINE(const char* filename, int lineno, const char *fmt, ...);
 #ifdef __linux__
-#include <err.h>
-#define ERR_AT_LINE(filename, lineno, fmt, ...) \
-    //error_at_line(EXIT_FAILURE, 0, filename, lineno, fmt, ##args);
-    va_list _args;
-    va_start(_args, fmt);
-    vprintf(fmt, _args);
-    va_end(_args);
+//#include <err.h>
+//#define ERR_AT_LINE(filename, lineno, fmt, ...) \
 #endif
 
 #ifdef __FreeBSD__
