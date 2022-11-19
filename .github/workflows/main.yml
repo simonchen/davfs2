@@ -36,8 +36,8 @@ jobs:
         cp build/release/upx /usr/local/bin/upx
     - name: Upx compress binary
       run: |
-        upx ./release/mount.davfs
-        upx ./release/umount.davfs
+        upx ./${{ matrix.platform.target }}/mount.davfs
+        upx ./${{ matrix.platform.target }}/umount.davfs
     - name: Upload binary artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -58,10 +58,3 @@ jobs:
         prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') }}
         generate_release_notes: true
 
-    #- name: MIPS Big Endian x32
-    #  if: success()
-    #  run: |
-    #      docker build . --build-arg ARCH=mips --build-arg HOST=mipsel-unknown-linux-gnu -t mips-linux-gnu --file Dockerfile
-    #      docker run mipsel-linux-gnu > mipsel-lts-linux-gnu
-    #      chmod +x mipsel-linux-gnu
-    #      ./mipsel-linux-gnu bash
