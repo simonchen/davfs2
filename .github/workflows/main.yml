@@ -54,7 +54,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       if: "startsWith(github.ref, 'refs/tags/')"
       with:
-        files: ./mipsel-unknown-linux-gnu-bin.tar.gz
+        files: ./${{ matrix.platform.target }}-bin.tar.gz
         prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') }}
         generate_release_notes: true
 
