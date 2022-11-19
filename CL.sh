@@ -29,4 +29,5 @@ mkdir ./release
 cp /usr/local/musl/sbin/*davfs ./release/
 mkdir ./release/davfs2
 cp ./etc/davfs2.conf ./release/davfs2/
+cp ./etc/secrets ./release/davfs2/
 ls -lt ./release/
