@@ -41,7 +41,7 @@ jobs:
     - name: Upload binary artifacts
       uses: actions/upload-artifact@v3
       with:
-          name: mipsel-unknown-linux-gnu-bin
+          name: {{ matrix.platform.target }}-bin
           path: ./${{ matrix.platform.target }}/
           if-no-files-found: error
     - name: Archive binary
