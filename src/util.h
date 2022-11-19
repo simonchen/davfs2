@@ -68,8 +68,7 @@
 
 extern void ERR_AT_LINE(const char* filename, int lineno, const char *fmt, ...);
 #ifdef __linux__
-//#include <err.h>
-//#define ERR_AT_LINE(filename, lineno, fmt, ...) \
+
 #endif
 
 #ifdef __FreeBSD__
