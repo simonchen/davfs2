@@ -23,7 +23,7 @@ ln -s /usr/local/musl/bin/neon-config /usr/local/bin/neon-config &&
 
 echo "\n================ DAVFS2 COMPLATION =================\n"
 chmod +x ./configure
-./configure dav_user=admin dav_group=root dav_syscachedir=/tmp/cache_davfs2 CC="/usr/local/musl/bin/musl-gcc" CFLAGS="-I/user/local/musl/include -I/usr/local/musl/include/neon" CPPFLAGS="-I/usr/local/musl/include -I/usr/local/musl/include/neon" LDFLAGS="-Wl,-Bstatic -L/usr/local/musl/lib" --prefix=/usr/local/musl --sysconfdir=/etc --host=$ENV_HOST && make install &&
+./configure dav_user=admin dav_group=root dav_syscachedir=/tmp CC="/usr/local/musl/bin/musl-gcc" CFLAGS="-I/user/local/musl/include -I/usr/local/musl/include/neon" CPPFLAGS="-I/usr/local/musl/include -I/usr/local/musl/include/neon" LDFLAGS="-Wl,-Bstatic -L/usr/local/musl/lib" --prefix=/usr/local/musl --sysconfdir=/etc --host=$ENV_HOST && make install &&
 echo "\n================ Release =============================\n"
 mkdir ./$ENV_HOST
 cp /usr/local/musl/sbin/*davfs ./$ENV_HOST/
