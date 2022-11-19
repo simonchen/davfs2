@@ -32,7 +32,7 @@ mount.davfs http://0.0.0.0:8080 /mnt/fuse
 # Default configurations
 **/etc/davfs2/davfs2.conf**
 - `secrets`(optional): /etc/davfs2/secrets
-- `cache_dir`: /tmp/cache_davfs2
+- `cache_dir`: /tmp/davfs2
 - `dav_user`: admin
 - `dav_group`: root
 
