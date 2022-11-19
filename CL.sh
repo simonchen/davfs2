@@ -25,9 +25,9 @@ echo "\n================ DAVFS2 COMPLATION =================\n"
 chmod +x ./configure
 ./configure dav_user=admin dav_group=root dav_syscachedir=/tmp/cache_davfs2 CC="/usr/local/musl/bin/musl-gcc" CFLAGS="-I/user/local/musl/include -I/usr/local/musl/include/neon" CPPFLAGS="-I/usr/local/musl/include -I/usr/local/musl/include/neon" LDFLAGS="-Wl,-Bstatic -L/usr/local/musl/lib" --prefix=/usr/local/musl --sysconfdir=/etc --host=$ENV_HOST && make install
 echo "\n================ Release =============================\n"
-mkdir ./release
-cp /usr/local/musl/sbin/*davfs ./release/
-mkdir ./release/davfs2
-cp ./etc/davfs2.conf ./release/davfs2/
-cp ./etc/secrets ./release/davfs2/
-ls -lt ./release/
+mkdir ./$ENV_HOST
+cp /usr/local/musl/sbin/*davfs ./$ENV_HOST/
+mkdir ./$ENV_HOST/davfs2
+cp ./etc/davfs2.conf ./$ENV_HOST/davfs2/
+cp ./etc/secrets ./$ENV_HOST/davfs2/
+ls -lt ./$ENV_HOST/
