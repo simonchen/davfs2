@@ -10,10 +10,10 @@ jobs:
       matrix:
         platform:
           - target: "mips-unknown-linux-gnu"
-            image_tag: "mips-musl"
+            image_tag: "linux-mips"
             container_name: "mips-release"
           - target: "mipsel-unknown-linux-gnu"
-            image_tag: "mipsel-musl"
+            image_tag: "linux-mipsel-lts"
             container_name: "mipsel-release"
     steps:
     - uses: actions/checkout@v3
