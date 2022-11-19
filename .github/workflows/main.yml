@@ -3,17 +3,26 @@ name: Cross-Release
 on: [push]
 
 jobs:
-
   build_mips:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - target: "mips-unknown-linux-gnu"
+            image_tag: "mips-musl"
+            container_name: "mips-release"
+          - target: "mipsel-unknown-linux-gnu"
+            image_tag: "mipsel-musl"
+            container_name: "mipsel-release"
     steps:
     - uses: actions/checkout@v3
     - name: MIPS Little Endian x32
       run: |
-          docker build . --build-arg ARCH=mipsel-lts --build-arg HOST=mipsel-unknown-linux-gnu --no-cache -t mipsel-lts-linux-gnu --file Dockerfile
-          docker run --name release mipsel-lts-linux-gnu 
+          docker build . --build-arg ARCH=${{ matrix.platform.image_tag }} --build-arg HOST=${{ matrix.platform.target }} --no-cache -t ${{ matrix.platform.target }} --file Dockerfile
+          docker run --name ${{ matrix.platform.container_name }} ${{ matrix.platform.target }} 
           #docker ps -a
-          docker cp release:/work/release .
+          docker cp ${{ matrix.platform.container_name }}:/work/${{ matrix.platform.target }} .
     - name: Install upx
       working-directory: /tmp
       env:
@@ -33,13 +42,13 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: mipsel-unknown-linux-gnu-bin
-          path: ./release/
+          path: ./${{ matrix.platform.target }}/
           if-no-files-found: error
     - name: Archive binary
       if: "startsWith(github.ref, 'refs/tags/')"
       run: |
-        cd ./release
-        tar -czvf ../mipsel-unknown-linux-gnu-bin.tar.gz -C ./ .
+        cd ./${{ matrix.platform.target }}
+        tar -czvf ../${{ matrix.platform.target }}-bin.tar.gz -C ./ .
         cd -
     - name: Upload binary to GitHub Release
       uses: softprops/action-gh-release@v1
