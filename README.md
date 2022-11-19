@@ -23,7 +23,7 @@ You simply extract the released bin.tar.gz
 assume that you have built the WebDav-resource with server url http://0.0.0.0:8080
 and you wanna mount to /mnt/fuse , you can type in the command line as follow:
 ```
-./mount.davfs http://0.0.0.0:8080 /mnt/fuse
+mount.davfs http://0.0.0.0:8080 /mnt/fuse
 ```
 **Note**
 - the server url could need credential as a `secrets` file (optional), you will be asked the credential if there is no `secrets' file.
