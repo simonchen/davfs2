@@ -11,6 +11,12 @@ The current source has pulled from http://download.savannah.nongnu.org/releases/
 - 当前只支持mipsel 架构（例如 MT7620/MT7621 soc)
 - 不支持WebDAV HTTPS
 
+**Note**
+You might try the following command to enable `fuse`
+```
+modprobe fuse
+```
+
 # Installation
 You simply extract the released bin.tar.gz
 
