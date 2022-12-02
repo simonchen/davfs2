@@ -4,6 +4,8 @@ The current source has pulled from http://download.savannah.nongnu.org/releases/
 
 # Prerequisite
 - Your kernel must include either the [coda](https://docs.kernel.org/filesystems/coda.html) file system or the [fuse](https://www.kernel.org/doc/html/latest/filesystems/fuse.html) file system or both. They may be loadable modules. Almost all Linux kernels support at least one of them. 
+
+# Features
 - The package doesn't support WebDAV-resource with https 
 - Mipsel architecture supported only.
 
